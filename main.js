@@ -48,3 +48,22 @@ function listRadioSelection(e){
 
 mySineRadio.addEventListener("input", listRadioSelection);
 myTriangleRadio.addEventListener("input", listRadioSelection);
+
+///////////// Range
+let myRange = document.getElementById("exampleRange");
+let rangeOutputText = document.getElementById("rangeOutput");
+
+/* difference between change and input events */
+myRange.addEventListener("input", (e) => {
+  rangeOutputText.textContent = e.target.value;
+});
+
+///////////// Range
+let myColourPicker = document.getElementById("exampleColourPicker");
+let colourOutputText = document.getElementById("colourOutput");
+
+myColourPicker.addEventListener("input", listColourOutput);
+
+function listColourOutput(e){
+  colourOutputText.textContent = e.target.value;
+}
