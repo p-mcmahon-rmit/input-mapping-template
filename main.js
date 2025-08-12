@@ -66,4 +66,6 @@ myColourPicker.addEventListener("input", listColourOutput);
 
 function listColourOutput(e){
   colourOutputText.textContent = e.target.value;
+  colourOutputText.style.backgroundColor = e.target.value;
+  colourOutputText.style.color = `hsl(from ${e.target.value} calc(360 - h) s calc(100 - l))`;
 }

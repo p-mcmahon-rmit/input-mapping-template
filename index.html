@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="main.js" defer></script>
+  <script src="xyControllerSetup.js" defer></script>
 
   <!-- favicon was sourced from favicon.io but the original graphics are copyright 2020 Twitter, Inc 
        and other contributors -->
@@ -94,6 +95,7 @@
   
   <p id="dateOutput"></p>
 
+  <!-- firefox -->
   <input type="time" />
   
   <p id="timeOutput"></p>
@@ -103,6 +105,16 @@
   <p id="dateTimeOutput"></p>
 
   <p>Date | Time | Date-time behaviour</p>
+
+  <div class="xyControlBox">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="xySVGEl">
+      <rect width="100" height="100" fill="transparent" id="xyPad" />
+      <circle r="3" fill="red"
+              cx="3" cy="3" class="xyPosMarker" />
+    </svg>
+  </div>
+
+  <p>X Position: <span id=xPosOutput>3</span> Y Position: <span id=yPosOutput>3</span></p>
   
 </body>
 
