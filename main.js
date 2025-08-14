@@ -1,14 +1,11 @@
+
+
+
 ///////////// Button
-let myButton = document.getElementById("exampleButton");
+
 let buttonOutputText = document.getElementById("buttonOutput");
 let buttonEventText = document.getElementById("currentButtonEvent");
-
-function exampleFunction(){
-  let screenWidth = window.innerWidth;
-  buttonOutputText.textContent = `This window is ${screenWidth}px wide.`;
-}
-
-myButton.addEventListener("click", exampleFunction);
+let heldButtonText = document.getElementById("buttonHeldEvent");
 
 myButton.addEventListener("mouseenter", () => { 
   buttonEventText.textContent = "mouseenter";
@@ -28,12 +25,20 @@ myButton.addEventListener("mouseup", () => {
 
 ///////////// Checkbox
 let myCheckbox = document.getElementById("exampleCheckbox");
+let myCheckboxTestButton = document.getElementById("checkboxTestButton");
 let checkboxOutputText = document.getElementById("checkboxOutput");
+let checkboxTestOutputText = document.getElementById("checkboxTestOutput");
 let checkboxCheckedText = document.getElementById("checkboxChecked");
 
 myCheckbox.addEventListener("change", (e) => {
   checkboxOutputText.textContent = e.target.value;
   checkboxCheckedText.textContent = e.target.checked;
+});
+
+myCheckboxTestButton.addEventListener("click", () => {
+  checkboxTestOutputText.textContent = "blue";
+  checkboxTestOutputText.style.color = "blue";
+  checkboxTestOutputText.style.textDecoration = "underline";
 });
 
 ///////////// Radio
@@ -42,23 +47,36 @@ let myTriangleRadio = document.getElementById("triangle");
 let radioOutputText = document.getElementById("radioOutput");
 
 function listRadioSelection(e){
-  console.log(e.target);
   radioOutputText.textContent = e.target.value;
 }
 
 mySineRadio.addEventListener("input", listRadioSelection);
 myTriangleRadio.addEventListener("input", listRadioSelection);
 
+///////////// Select
+let mySelect = document.getElementById("pet-select");
+let mySelectionOutputText = document.getElementById("selectOutput");
+
+mySelect.addEventListener("change", (e) => {
+  mySelectionOutputText.textContent = e.target.value;
+});
+
 ///////////// Range
 let myRange = document.getElementById("exampleRange");
 let rangeOutputText = document.getElementById("rangeOutput");
 
-/* difference between change and input events */
 myRange.addEventListener("input", (e) => {
   rangeOutputText.textContent = e.target.value;
 });
 
-///////////// Range
+function rangeEditStart(){
+  
+}
+function rangeEditEnd(){
+  console.log("mouse up event heard");
+}
+
+///////////// Color
 let myColourPicker = document.getElementById("exampleColourPicker");
 let colourOutputText = document.getElementById("colourOutput");
 
@@ -69,3 +87,11 @@ function listColourOutput(e){
   colourOutputText.style.backgroundColor = e.target.value;
   colourOutputText.style.color = `hsl(from ${e.target.value} calc(360 - h) s calc(100 - l))`;
 }
+
+///////////// Date/Time
+let myTimePicker = document.getElementById("exampleTime");
+let myDatePicker = document.getElementById("exampleDate");
+let myDateTimePicker = document.getElementById("exampleDateTime");
+let timeOutputText = document.getElementById("timeOutput");
+let dateOutputText = document.getElementById("dateOutput");
+let dateTimeOutputText = document.getElementById("dateTimeOutput");
